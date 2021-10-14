@@ -1,0 +1,814 @@
+<style>@font-face { font-family:AtlasGrotesk; src:url("https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Bold-Web.woff2") format("woff2"), url("https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Bold-Web.woff") format("woff"); font-style:normal; font-weight:700}@font-face { font-family:AtlasGrotesk; src:url("https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Regular-Web.woff2") format("woff2"), url("https://fivethirtyeight.com/wp-content/themes/espn-fivethirtyeight/assets/fonts/AtlasGrotesk-Regular-Web.woff") format("woff"); font-style:normal; font-weight:400}body { font-family:AtlasGrotesk,"Helvetica Neue",Helvetica,Arial,sans-serif; background-color:#fff}table {	border-collapse: collapse;	border-spacing: 0;}tbody tr td {	font-size: 14px;	padding: 11px 8px 9px 8px;	border-bottom: 1px solid #cdcdcd;	vertical-align: middle;}tbody, tfoot, thead, tr, th, td {    border: 0;    font-weight: 400;    font-size: 14px;}tr {    border-bottom: 1px solid #cdcdcd;}thead th {	font-size: 10px;	font-weight: 700;	line-height: 14px;	text-transform: uppercase;	padding: 6px 8px 4px 8px;	text-align: left;	cursor: pointer;	vertical-align: bottom;	border-bottom: 2px solid #222;	background-color: #fff;	-webkit-user-select: none;	-moz-user-select: none;	-ms-user-select: none;	-webkit-tap-highlight-color: rgba(0,0,0,0);}</style><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PLAYER_ID</th>
+      <th>PLAYER_NAME</th>
+      <th>PULL_UP_FG3A</th>
+      <th>PULL_UP_FG3M</th>
+      <th>PULL_UP_FG3_PCT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>201935</td>
+      <td>James Harden</td>
+      <td>3681.0</td>
+      <td>1311.0</td>
+      <td>35.615322</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>203081</td>
+      <td>Damian Lillard</td>
+      <td>2605.0</td>
+      <td>956.0</td>
+      <td>36.698656</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>201939</td>
+      <td>Stephen Curry</td>
+      <td>2249.0</td>
+      <td>920.0</td>
+      <td>40.907070</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>202689</td>
+      <td>Kemba Walker</td>
+      <td>2053.0</td>
+      <td>731.0</td>
+      <td>35.606430</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>101108</td>
+      <td>Chris Paul</td>
+      <td>1617.0</td>
+      <td>584.0</td>
+      <td>36.116265</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>200768</td>
+      <td>Kyle Lowry</td>
+      <td>1631.0</td>
+      <td>582.0</td>
+      <td>35.683630</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2544</td>
+      <td>LeBron James</td>
+      <td>1430.0</td>
+      <td>481.0</td>
+      <td>33.636364</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>202681</td>
+      <td>Kyrie Irving</td>
+      <td>1235.0</td>
+      <td>461.0</td>
+      <td>37.327935</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>101150</td>
+      <td>Lou Williams</td>
+      <td>1348.0</td>
+      <td>454.0</td>
+      <td>33.679525</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>201566</td>
+      <td>Russell Westbrook</td>
+      <td>1521.0</td>
+      <td>451.0</td>
+      <td>29.651545</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>202331</td>
+      <td>Paul George</td>
+      <td>1129.0</td>
+      <td>401.0</td>
+      <td>35.518158</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>203468</td>
+      <td>CJ McCollum</td>
+      <td>1088.0</td>
+      <td>396.0</td>
+      <td>36.397059</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>202738</td>
+      <td>Isaiah Thomas</td>
+      <td>1118.0</td>
+      <td>381.0</td>
+      <td>34.078712</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>201950</td>
+      <td>Jrue Holiday</td>
+      <td>1110.0</td>
+      <td>368.0</td>
+      <td>33.153153</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1626156</td>
+      <td>D'Angelo Russell</td>
+      <td>1043.0</td>
+      <td>352.0</td>
+      <td>33.748802</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>201142</td>
+      <td>Kevin Durant</td>
+      <td>990.0</td>
+      <td>351.0</td>
+      <td>35.454545</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>201144</td>
+      <td>Mike Conley</td>
+      <td>962.0</td>
+      <td>343.0</td>
+      <td>35.654886</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>203078</td>
+      <td>Bradley Beal</td>
+      <td>994.0</td>
+      <td>339.0</td>
+      <td>34.104628</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>200755</td>
+      <td>JJ Redick</td>
+      <td>847.0</td>
+      <td>318.0</td>
+      <td>37.544274</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1627741</td>
+      <td>Buddy Hield</td>
+      <td>859.0</td>
+      <td>314.0</td>
+      <td>36.554133</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>203897</td>
+      <td>Zach LaVine</td>
+      <td>884.0</td>
+      <td>311.0</td>
+      <td>35.180995</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>201571</td>
+      <td>D.J. Augustin</td>
+      <td>848.0</td>
+      <td>310.0</td>
+      <td>36.556604</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>202339</td>
+      <td>Eric Bledsoe</td>
+      <td>828.0</td>
+      <td>292.0</td>
+      <td>35.265700</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1626164</td>
+      <td>Devin Booker</td>
+      <td>888.0</td>
+      <td>283.0</td>
+      <td>31.869369</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>201988</td>
+      <td>Patty Mills</td>
+      <td>762.0</td>
+      <td>283.0</td>
+      <td>37.139108</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1628378</td>
+      <td>Donovan Mitchell</td>
+      <td>873.0</td>
+      <td>275.0</td>
+      <td>31.500573</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>2037</td>
+      <td>Jamal Crawford</td>
+      <td>848.0</td>
+      <td>264.0</td>
+      <td>31.132075</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1629027</td>
+      <td>Trae Young</td>
+      <td>806.0</td>
+      <td>262.0</td>
+      <td>32.506203</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>202704</td>
+      <td>Reggie Jackson</td>
+      <td>780.0</td>
+      <td>260.0</td>
+      <td>33.333333</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>201952</td>
+      <td>Jeff Teague</td>
+      <td>749.0</td>
+      <td>258.0</td>
+      <td>34.445928</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1629029</td>
+      <td>Luka Doncic</td>
+      <td>816.0</td>
+      <td>257.0</td>
+      <td>31.495098</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>201569</td>
+      <td>Eric Gordon</td>
+      <td>756.0</td>
+      <td>253.0</td>
+      <td>33.465608</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>200826</td>
+      <td>J.J. Barea</td>
+      <td>801.0</td>
+      <td>249.0</td>
+      <td>31.086142</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>203903</td>
+      <td>Jordan Clarkson</td>
+      <td>777.0</td>
+      <td>238.0</td>
+      <td>30.630631</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>201609</td>
+      <td>Goran Dragic</td>
+      <td>656.0</td>
+      <td>237.0</td>
+      <td>36.128049</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>203501</td>
+      <td>Tim Hardaway Jr.</td>
+      <td>685.0</td>
+      <td>235.0</td>
+      <td>34.306569</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>203095</td>
+      <td>Evan Fournier</td>
+      <td>699.0</td>
+      <td>234.0</td>
+      <td>33.476395</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>203915</td>
+      <td>Spencer Dinwiddie</td>
+      <td>797.0</td>
+      <td>233.0</td>
+      <td>29.234630</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>202688</td>
+      <td>Brandon Knight</td>
+      <td>664.0</td>
+      <td>228.0</td>
+      <td>34.337349</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>1627750</td>
+      <td>Jamal Murray</td>
+      <td>693.0</td>
+      <td>222.0</td>
+      <td>32.034632</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>203114</td>
+      <td>Khris Middleton</td>
+      <td>635.0</td>
+      <td>221.0</td>
+      <td>34.803150</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>201943</td>
+      <td>Brandon Jennings</td>
+      <td>659.0</td>
+      <td>217.0</td>
+      <td>32.928680</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>202691</td>
+      <td>Klay Thompson</td>
+      <td>592.0</td>
+      <td>214.0</td>
+      <td>36.148649</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>202083</td>
+      <td>Wesley Matthews</td>
+      <td>660.0</td>
+      <td>213.0</td>
+      <td>32.272727</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>203506</td>
+      <td>Victor Oladipo</td>
+      <td>634.0</td>
+      <td>208.0</td>
+      <td>32.807571</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>203085</td>
+      <td>Austin Rivers</td>
+      <td>634.0</td>
+      <td>208.0</td>
+      <td>32.807571</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>204060</td>
+      <td>Joe Ingles</td>
+      <td>576.0</td>
+      <td>205.0</td>
+      <td>35.590278</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>203115</td>
+      <td>Will Barton</td>
+      <td>586.0</td>
+      <td>200.0</td>
+      <td>34.129693</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>201961</td>
+      <td>Wayne Ellington</td>
+      <td>543.0</td>
+      <td>195.0</td>
+      <td>35.911602</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>201156</td>
+      <td>Nick Young</td>
+      <td>553.0</td>
+      <td>192.0</td>
+      <td>34.719711</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>2749</td>
+      <td>Jameer Nelson</td>
+      <td>561.0</td>
+      <td>192.0</td>
+      <td>34.224599</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>202322</td>
+      <td>John Wall</td>
+      <td>659.0</td>
+      <td>189.0</td>
+      <td>28.679818</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>202695</td>
+      <td>Kawhi Leonard</td>
+      <td>556.0</td>
+      <td>186.0</td>
+      <td>33.453237</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>203082</td>
+      <td>Terrence Ross</td>
+      <td>558.0</td>
+      <td>181.0</td>
+      <td>32.437276</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>1628369</td>
+      <td>Jayson Tatum</td>
+      <td>476.0</td>
+      <td>178.0</td>
+      <td>37.394958</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>101123</td>
+      <td>Gerald Green</td>
+      <td>531.0</td>
+      <td>177.0</td>
+      <td>33.333333</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>201933</td>
+      <td>Blake Griffin</td>
+      <td>531.0</td>
+      <td>176.0</td>
+      <td>33.145009</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>1626179</td>
+      <td>Terry Rozier</td>
+      <td>530.0</td>
+      <td>175.0</td>
+      <td>33.018868</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>203471</td>
+      <td>Dennis Schroder</td>
+      <td>608.0</td>
+      <td>174.0</td>
+      <td>28.618421</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>203918</td>
+      <td>Rodney Hood</td>
+      <td>501.0</td>
+      <td>171.0</td>
+      <td>34.131737</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>203484</td>
+      <td>Kentavious Caldwell-Pope</td>
+      <td>571.0</td>
+      <td>170.0</td>
+      <td>29.772329</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>2546</td>
+      <td>Carmelo Anthony</td>
+      <td>568.0</td>
+      <td>167.0</td>
+      <td>29.401408</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>201158</td>
+      <td>Marco Belinelli</td>
+      <td>529.0</td>
+      <td>167.0</td>
+      <td>31.568998</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>201588</td>
+      <td>George Hill</td>
+      <td>474.0</td>
+      <td>165.0</td>
+      <td>34.810127</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>201936</td>
+      <td>Tyreke Evans</td>
+      <td>489.0</td>
+      <td>164.0</td>
+      <td>33.537832</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>202330</td>
+      <td>Gordon Hayward</td>
+      <td>517.0</td>
+      <td>160.0</td>
+      <td>30.947776</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>2594</td>
+      <td>Kyle Korver</td>
+      <td>396.0</td>
+      <td>158.0</td>
+      <td>39.898990</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>201587</td>
+      <td>Nicolas Batum</td>
+      <td>487.0</td>
+      <td>158.0</td>
+      <td>32.443532</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>203935</td>
+      <td>Marcus Smart</td>
+      <td>491.0</td>
+      <td>154.0</td>
+      <td>31.364562</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>202711</td>
+      <td>Bojan Bogdanovic</td>
+      <td>424.0</td>
+      <td>154.0</td>
+      <td>36.320755</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>202692</td>
+      <td>Alec Burks</td>
+      <td>434.0</td>
+      <td>148.0</td>
+      <td>34.101382</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>203894</td>
+      <td>Shabazz Napier</td>
+      <td>475.0</td>
+      <td>145.0</td>
+      <td>30.526316</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>203507</td>
+      <td>Giannis Antetokounmpo</td>
+      <td>522.0</td>
+      <td>144.0</td>
+      <td>27.586207</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>201954</td>
+      <td>Darren Collison</td>
+      <td>392.0</td>
+      <td>142.0</td>
+      <td>36.224490</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>203477</td>
+      <td>Isaiah Canaan</td>
+      <td>415.0</td>
+      <td>141.0</td>
+      <td>33.975904</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>2747</td>
+      <td>JR Smith</td>
+      <td>478.0</td>
+      <td>140.0</td>
+      <td>29.288703</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>1628984</td>
+      <td>Devonte' Graham</td>
+      <td>417.0</td>
+      <td>137.0</td>
+      <td>32.853717</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>203952</td>
+      <td>Andrew Wiggins</td>
+      <td>490.0</td>
+      <td>137.0</td>
+      <td>27.959184</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>202710</td>
+      <td>Jimmy Butler</td>
+      <td>474.0</td>
+      <td>136.0</td>
+      <td>28.691983</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>203584</td>
+      <td>Troy Daniels</td>
+      <td>331.0</td>
+      <td>136.0</td>
+      <td>41.087613</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>203145</td>
+      <td>Kent Bazemore</td>
+      <td>458.0</td>
+      <td>134.0</td>
+      <td>29.257642</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>201166</td>
+      <td>Aaron Brooks</td>
+      <td>408.0</td>
+      <td>134.0</td>
+      <td>32.843137</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>201980</td>
+      <td>Danny Green</td>
+      <td>395.0</td>
+      <td>132.0</td>
+      <td>33.417722</td>
+    </tr>
+    <tr>
+      <th>83</th>
+      <td>1627747</td>
+      <td>Caris LeVert</td>
+      <td>378.0</td>
+      <td>132.0</td>
+      <td>34.920635</td>
+    </tr>
+    <tr>
+      <th>84</th>
+      <td>202694</td>
+      <td>Marcus Morris Sr.</td>
+      <td>408.0</td>
+      <td>130.0</td>
+      <td>31.862745</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>203109</td>
+      <td>Jae Crowder</td>
+      <td>411.0</td>
+      <td>127.0</td>
+      <td>30.900243</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>203087</td>
+      <td>Jeremy Lamb</td>
+      <td>428.0</td>
+      <td>126.0</td>
+      <td>29.439252</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>203552</td>
+      <td>Seth Curry</td>
+      <td>322.0</td>
+      <td>126.0</td>
+      <td>39.130435</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>2772</td>
+      <td>Trevor Ariza</td>
+      <td>442.0</td>
+      <td>125.0</td>
+      <td>28.280543</td>
+    </tr>
+    <tr>
+      <th>89</th>
+      <td>200751</td>
+      <td>Randy Foye</td>
+      <td>349.0</td>
+      <td>124.0</td>
+      <td>35.530086</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>2548</td>
+      <td>Dwyane Wade</td>
+      <td>432.0</td>
+      <td>124.0</td>
+      <td>28.703704</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>202340</td>
+      <td>Avery Bradley</td>
+      <td>353.0</td>
+      <td>120.0</td>
+      <td>33.994334</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <td>202699</td>
+      <td>Tobias Harris</td>
+      <td>331.0</td>
+      <td>119.0</td>
+      <td>35.951662</td>
+    </tr>
+    <tr>
+      <th>93</th>
+      <td>203992</td>
+      <td>Bogdan Bogdanovic</td>
+      <td>366.0</td>
+      <td>119.0</td>
+      <td>32.513661</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>202391</td>
+      <td>Jeremy Lin</td>
+      <td>360.0</td>
+      <td>119.0</td>
+      <td>33.055556</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>1627832</td>
+      <td>Fred VanVleet</td>
+      <td>353.0</td>
+      <td>117.0</td>
+      <td>33.144476</td>
+    </tr>
+    <tr>
+      <th>96</th>
+      <td>203079</td>
+      <td>Dion Waiters</td>
+      <td>399.0</td>
+      <td>113.0</td>
+      <td>28.320802</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>1627812</td>
+      <td>Yogi Ferrell</td>
+      <td>323.0</td>
+      <td>113.0</td>
+      <td>34.984520</td>
+    </tr>
+    <tr>
+      <th>98</th>
+      <td>202714</td>
+      <td>Shelvin Mack</td>
+      <td>367.0</td>
+      <td>112.0</td>
+      <td>30.517711</td>
+    </tr>
+    <tr>
+      <th>99</th>
+      <td>201568</td>
+      <td>Danilo Gallinari</td>
+      <td>341.0</td>
+      <td>109.0</td>
+      <td>31.964809</td>
+    </tr>
+  </tbody>
+</table>
